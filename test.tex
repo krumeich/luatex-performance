@@ -1,0 +1,15 @@
+\documentclass[a4paper]{scrartcl}
+
+\usepackage{longtable}
+\usepackage[language=english]{lipsum}
+
+
+\hfuzz=2000pt
+\hbadness=10000
+
+
+
+\begin{document}
+\directlua{for i=0,200 do tex.sprint("\\input{testcase} ") end}
+\end{document}
+

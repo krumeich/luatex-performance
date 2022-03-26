@@ -1,0 +1,12 @@
+= LuaTeX Performance
+
+We noticed degrading performance on long documents processed with LuaTeX. This
+simplified sample is a minimal working example to show that once the document is
+in the four-figure page range, the LuaTeX engine drops in performance.
+
+We have the impression that this has not always been the case. Currently, it
+seems that some time in late 2021 a change has been made that the processing
+speed became worse.
+
+Run `lualatex test` to build the sample. Change number of iterations by
+adjusting the loop in `test.tex`.
