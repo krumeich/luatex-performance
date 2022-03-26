@@ -1,15 +1,51 @@
+\listfiles
+
 \documentclass[a4paper]{scrartcl}
 
+\usepackage{luacode}
 \usepackage{longtable}
 \usepackage[language=english]{lipsum}
 
-
+% provide clean console output
 \hfuzz=2000pt
 \hbadness=10000
 
-
+\newcommand{\marktime}{\directlua{table.insert(times, os.time())}}
 
 \begin{document}
-\directlua{for i=0,200 do tex.sprint("\\input{testcase} ") end}
+
+\begin{luacode*}
+
+  times = {}
+  print(start)
+  for j = 0, 400 do
+     tex.print("\\input{testcase} ")
+  end
+
+\end{luacode*}
+
+
+\begin{luacode}
+
+  local theformat = "%4s %8s %8s"
+  local header = string.format(theformat, "Num", "Lap", "Total")
+
+  print()
+  print(header)
+
+  local start = times[1]
+  local last = start
+
+  for k, v in pairs(times) do
+
+  if k % 50 == 0 then
+     local now = v - last
+     local line = string.format(theformat, k, now, v-start)
+     print(line); last = v
+  end
+  end
+
+\end{luacode}
+
 \end{document}
 

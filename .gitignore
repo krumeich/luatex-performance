@@ -2,3 +2,6 @@
 *.pdf
 *.log
 *~
+auto/
+*.fdb_latexmk
+*.fls
