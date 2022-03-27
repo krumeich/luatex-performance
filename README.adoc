@@ -39,14 +39,25 @@ Tests show that processing times rise exponentially when using the newer install
 
 If we reduce the complexity of the sample and throw out the `longtable` environment, the processing times are linear for both versions. 
 
-The newer (slower) installation uses `longtable` in version v4.17 (dated 2021-09-01), while the older (faster) installation has v4.16 (2021-05-07). So it seems that the update to longtable from v4.16 to v4.17 has introduced a regression that causes long documents with hundreds of `longtable` environments to degrade in performance.
+The newer (slower) installation uses `longtable` in version v4.17 (dated 2021-09-01), while the older (faster) installation has v4.16 (2021-05-07). 
+
+On the surface it seems that the update to longtable from v4.16 to v4.17 has introduced a regression that causes long documents with hundreds of `longtable` environments to degrade in performance.
+
+However, after further investigation it turns out that this is not the case. Manually copying the newer version of `longtable` into the faster container does not cause the build to slow down. Vice versa, the older version of `longtable` in the slower container results in non-linear build time.
+
+From what we ca n deduce here, it seems that `longtable` triggers some behaviour in other parts of the typesetting process that cause non-linear build times. It remains to be seen what is the cause for this.
+
+== To Do
+
+* List TeX Live package state to make clear, which versions are employed
+
 
 
 == Data
 
 All data is recorded on macOS 12.3 running on x86_64 using Docker 4.6.1
 
-=== Results for n-doc 4.6.1 (longtable v4.17)
+=== Results for n-doc 4.6.1
 
 ----
 
@@ -75,7 +86,7 @@ l3backend-luatex.def    2022-02-07 L3 backend support: PDF output (LuaTeX)
 
 ----
 
-=== Results for n-doc 4.6.0 (longtable v4.16)
+=== Results for n-doc 4.6.0
 
 ----
 

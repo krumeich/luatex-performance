@@ -4,17 +4,17 @@
 % This is the sample without longtable. It runs in linear time with
 % both TeX Live installations.
 
-\directlua{for i=0,10 do tex.sprint("\lorem{} \lorem{} \lorem{} \par") end}
+% \directlua{for i=0,10 do tex.sprint("\lorem{} \lorem{} \lorem{} \par") end}
 
 
 % This is the sample with longtable. It runs in exponential time with the
 % longtable environment in version 4.17
 
-% \begin{longtable}[c]{@{}cp{.43\textwidth}p{.43\textwidth}@{}}
-% \textbf{Step} & \textbf{Description} & \textbf{Exptected Result} \tabularnewline
-% \directlua{for i=0,10 do tex.sprint(i .. " &  \lorem{} & \lorem{}  \\tabularnewline") end}
-% \caption{Table 1}
-% \end{longtable}
+\begin{longtable}[c]{@{}cp{.43\textwidth}p{.43\textwidth}@{}}
+\textbf{Step} & \textbf{Description} & \textbf{Exptected Result} \tabularnewline
+\directlua{for i=0,10 do tex.sprint(i .. " &  \lorem{} & \lorem{}  \\tabularnewline") end}
+\caption{Table 1}
+\end{longtable}
 
 
 
