@@ -1,65 +1,24 @@
 \section{Section 313}
 
-\subsection{Description}
 
-\lipsum[1]
+% This is the sample without longtable. It runs in linear time with
+% both TeX Live installations.
 
-\subsection{Assignments}
-
-\begin{longtable}[c]{@{}p{.28\textwidth}p{.42\textwidth}p{.2\textwidth}@{}}
-\textbf{Col 1} & \textbf{Col 2} & \textbf{Col 3}\tabularnewline
-\raggedright{Whatever 1}\linebreak[4]
-\raggedright{Whatever 1}\linebreak[4]
- & \raggedright{Whatever 2}\linebreak[4]
-\raggedright{Whatever 2}\linebreak[4]
- & \raggedright{Whatever 1}\linebreak[4]
- \tabularnewline
-
-\caption{Zuordnungen}
-\end{longtable}
-
-\subsection{Table 1}
-
-\lipsum[1][3-10]
-
-\begin{longtable}[c]{@{}cp{.43\textwidth}p{.43\textwidth}@{}}
-
-\textbf{Step} & \textbf{Description} & \textbf{Exptected Result} \tabularnewline
-
-\directlua{for i=0,10 do tex.sprint(i .. " & \\lipsum[1][3-10] & \\lipsum[3][1-8]  \\tabularnewline") end}
-
-\caption{Table 1}
-\end{longtable}
-
-%% Table 2
-
-\subsection{Table 2}
-
-\lipsum[2][1-9]
-
-\begin{longtable}[c]{@{}cp{.43\textwidth}p{.43\textwidth}@{}}
-
-\textbf{Step} & \textbf{Description} & \textbf{Exptected Result} \tabularnewline
-
-\directlua{for i=0,10 do tex.sprint(i .. " & \\lipsum[2][1-8] & \\lipsum[4][1-6]  \\tabularnewline") end}
-
-\caption{Table 2}
-\end{longtable}
+\directlua{for i=0,10 do tex.sprint("\lorem{} \lorem{} \lorem{} \par") end}
 
 
-\subsection{Table 3}
+% This is the sample with longtable. It runs in exponential time with the
+% longtable environment in version 4.17
 
-\lipsum[3-4]
+% \begin{longtable}[c]{@{}cp{.43\textwidth}p{.43\textwidth}@{}}
+% \textbf{Step} & \textbf{Description} & \textbf{Exptected Result} \tabularnewline
+% \directlua{for i=0,10 do tex.sprint(i .. " &  \lorem{} & \lorem{}  \\tabularnewline") end}
+% \caption{Table 1}
+% \end{longtable}
 
-\begin{longtable}[c]{@{}cp{.43\textwidth}p{.43\textwidth}@{}}
 
-\textbf{Step} & \textbf{Description} & \textbf{Exptected Result} \tabularnewline
 
-\directlua{for i=0,10 do tex.sprint(i .. " & \\lipsum[1][3-10] & \\lipsum[3][1-8]  \\tabularnewline") end}
-
-\caption{Table 3}
-\end{longtable}
-
+% This macro records time for each run
 \marktime
 
 

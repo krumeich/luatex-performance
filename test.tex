@@ -1,10 +1,9 @@
 \listfiles
 
-\documentclass[a4paper]{scrartcl}
+\documentclass[a4paper]{article}
 
 \usepackage{luacode}
 \usepackage{longtable}
-\usepackage[language=english]{lipsum}
 
 % provide clean console output
 \hfuzz=2000pt
@@ -12,13 +11,20 @@
 
 \newcommand{\marktime}{\directlua{table.insert(times, os.time())}}
 
+\newcommand{\lorem}{Curabitur dictum gravida mauris. Nam arcu libero, nonummy
+  eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+  neque. Pellentesque habitant morbi tristique senectus et netus et malesuada
+  fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla
+  et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet
+  tortor gravida placerat.}
+
 \begin{document}
 
 \begin{luacode*}
 
   times = {}
   print(start)
-  for j = 0, 400 do
+  for j = 0, 800 do
      tex.print("\\input{testcase} ")
   end
 
@@ -38,7 +44,7 @@
 
   for k, v in pairs(times) do
 
-  if k % 50 == 0 then
+  if k % 100 == 0 then
      local now = v - last
      local line = string.format(theformat, k, now, v-start)
      print(line); last = v
