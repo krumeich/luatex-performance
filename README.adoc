@@ -47,15 +47,10 @@ However, after further investigation it turns out that this is not the case. Man
 
 From what we ca n deduce here, it seems that `longtable` triggers some behaviour in other parts of the typesetting process that cause non-linear build times. It remains to be seen what is the cause for this.
 
-== To Do
-
-* List TeX Live package state to make clear, which versions are employed
-
-
 
 == Data
 
-All data is recorded on macOS 12.3 running on x86_64 using Docker 4.6.1
+All data has been recorded on macOS 12.3 running on x86_64 using Docker 4.6.1
 
 === Results for n-doc 4.6.1
 
@@ -171,3 +166,186 @@ l3backend-luatex.def    2021-08-04 L3 backend support: PDF output (LuaTeX)
 
 ----
 
+== TeX Live Package Status
+
+Obtained by running `tlmgr list --only-installed --data  "name,localrev"`
+
+[cols="1,1,1,1"]
+|===
+| Package | Version in 4.6.0 | Version in 4.6.1 |
+| adjustbox | 56291 | 56291 |
+| amsfonts | 29208 | 61937 | Update
+| amsmath | 59441 | 61041 | Update
+| atbegshi | 53051 | 53051 |
+| atveryend | 53108 | 53108 |
+| auxhook | 53173 | 53173 |
+| babel | 60021 | 62203 | Update
+| babel-english | 44495 | 44495 |
+| babel-german | 57978 | 57978 |
+| biber | 57273 | 61867 | Update
+| biber.x86_64-linux | 57273 | 61867 | Update
+| biblatex | 57272 | 61868 | Update
+| bigintcalc | 53172 | 53172 |
+| bitset | 53837 | 53837 |
+| bookmark | 56885 | 56885 |
+| booktabs | 53402 | 53402 |
+| caption | 56771 | 62291 | Update
+| catchfile | 53084 | 53084 |
+| cm | 57963 | 57963 |
+| collectbox | 56291 | 56291 |
+| colortbl | 53545 | 53545 |
+| csquotes | 57844 | 57844 |
+| ctablestack | 38514 | 38514 |
+| datatool | 52663 | 52663 |
+| datetime2 | 58590 | 58590 |
+| datetime2-english | 52479 | 52479 |
+| datetime2-german | 53125 | 53125 |
+| dehyph | 48599 | 48599 |
+| dirtree | 42428 | 42428 |
+| enumitem | 51423 | 51423 |
+| environ | 56615 | 56615 |
+| epstopdf | 48684 | 61719 | Update
+| epstopdf-pkg | 53546 | 53546 |
+| epstopdf.x86_64-linux | 18365 | 18365 |
+| eso-pic | 56658 | 56658 |
+| etex | 56291 | 56291 |
+| etexcmds | 53171 | 53171 |
+| etoolbox | 56554 | 56554 |
+| euenc | 19795 | 19795 |
+| everyshi | 57001 | 57001 |
+| fancybox | 18304 | 18304 |
+| fancyvrb | 60226 | 61368 | Update
+| firstaid | 59798 | 61042 | Update
+| float | 15878 | 15878 |
+| fontools | 60005 | 61726 | Update
+| fontools.x86_64-linux | 25997 | 25997 |
+| fontspec | 56594 | 61617 | Update
+| fp | 49719 | 49719 |
+| framed | 26789 | 26789 |
+| fvextra | 49947 | 49947 |
+| geometry | 54080 | 61719 | Update
+| gettitlestring | 53170 | 53170 |
+| gitinfo2 | 38913 | 38913 |
+| glossaries | 54402 | 60921 | Update
+| glossaries-english | 35665 | 35665 |
+| glossaries-extra | 54688 | 61131 | Update
+| glossaries-german | 35665 | 35665 |
+| glossaries.x86_64-linux | 37813 | 37813 |
+| gnu-freefont | 29349 | 29349 |
+| graphics | 59424 | 61315 | Update
+| graphics-cfg | 41448 | 41448 |
+| graphics-def | 59435 | 62085 | Update
+| grfext | 53024 | 53024 |
+| grffile | 52756 | 52756 |
+| hycolor | 53584 | 53584 |
+| hyperref | 59511 | 62142 | Update
+| hyph-utf8 | 58619 | 61719 | Update
+| hyphen-base | 58630 | 61052 | Update
+| hyphen-german | 59807 | 59807 |
+| ifmtarg | 47544 | 47544 |
+| ifplatform | 45533 | 45533 |
+| iftex | 56594 | 61910 | Update
+| imakeidx | 42287 | 42287 |
+| infwarerr | 53023 | 53023 |
+| intcalc | 53168 | 53168 |
+| knuth-lib | 57963 | 57963 |
+| koma-script | 59737 | 61108 | Update
+| kpathsea | 59203 | 61937 | Update
+| kpathsea.x86_64-linux | 57878 | 57878 |
+| kvdefinekeys | 53193 | 53193 |
+| kvoptions | 56609 | 56609 |
+| kvsetkeys | 53166 | 53166 |
+| l3backend | 60167 | 61931 | Update
+| l3kernel | 60338 | 62165 | Update
+| l3packages | 60338 | 61588 | Update
+| latex | 59599 | 61232 | Update
+| latex-bin | 57972 | 62145 | Update
+| latex-bin.x86_64-linux | 54018 | 54018 |
+| latex-fonts | 28888 | 28888 |
+| latexconfig | 53525 | 53525 |
+| latexmk | 59535 | 61146 | Update
+| latexmk.x86_64-linux | 10937 | 10937 |
+| letltxmacro | 53022 | 53022 |
+| lineno | 57866 | 61719 | Update
+| listings | 55265 | 55265 |
+| lm | 58637 | 61719 | Update
+| logreq | 53003 | 53003 |
+| ltablex | 34923 | 34923 |
+| ltxcmds | 56421 | 56421 |
+| lua-alt-getopt | 56414 | 56414 |
+| lua-ul | 59186 | 59186 |
+| luacode | 25193 | 25193 |
+| luacolor | 57829 | 57829 |
+| luahbtex | 57972 | 57972 |
+| luahbtex.x86_64-linux | 58872 | 58872 |
+| lualatex-truncate | 48469 | 48469 |
+| lualibs | 59298 | 59298 |
+| luaotfload | 59293 | 62239 | Update
+| luaotfload.x86_64-linux | 34647 | 34647 |
+| luapackageloader | 54779 | 54779 |
+| luatex | 58822 | 62174 | Update
+| luatex.x86_64-linux | 58872 | 58872 |
+| luatexbase | 52663 | 52663 |
+| makecell | 15878 | 15878 |
+| makeindex | 52851 | 52851 |
+| makeindex.x86_64-linux | 57878 | 57878 |
+| mdwtools | 15878 | 15878 |
+| mfirstuc | 45803 | 60770 | Update
+| minibox | 30914 | 30914 |
+| minted | 44855 | 61405 | Update
+| ms | 57473 | 57473 |
+| multirow | 58396 | 58396 |
+| nimbus15 | 58839 | 58839 |
+| noindentafter | 59195 | 59195 |
+| oberdiek | 56291 | 61066 | Update
+| pdfescape | 53082 | 53082 |
+| pdflscape | 53047 | 53047 |
+| pdftex | 57973 | 62145 | Update
+| pdftex.x86_64-linux | 59752 | 59752 |
+| pdftexcmds | 55777 | 55777 |
+| pgf | 59210 | 59210 |
+| pgf-umlsd | 55342 | 55342 |
+| placeins | 19848 | 19848 |
+| plain | 57963 | 57963 |
+| refcount | 53164 | 53164 |
+| relsize | 30707 | 30707 |
+| rerunfilecheck | 54841 | 54841 |
+| roboto | 54512 | 54512 |
+| scheme-infraonly | 54191 | 54191 |
+| splitindex | 39766 | 39766 |
+| splitindex.x86_64-linux | 29688 | 29688 |
+| stringenc | 52982 | 52982 |
+| substr | 16117 | 16117 |
+| tex-ini-files | 40533 | 40533 |
+| texlive-scripts | 60577 | 62542 | Update
+| texlive-scripts.x86_64-linux | 55172 | 55172 |
+| texlive.infra | 60568 | 62112 | Update
+| texlive.infra.x86_64-linux | 57933 | 61925 | Update
+| textcase | 52092 | 52092 |
+| threeparttable | 17383 | 17383 |
+| threeparttablex | 34206 | 34206 |
+| tipa | 29349 | 29349 |
+| tocloft | 53364 | 53364 |
+| tools | 59424 | 61041 | Update
+| tracklang | 55707 | 55707 |
+| translations | 57461 | 61896 | Update
+| trimspaces | 15878 | 15878 |
+| truncate | 18921 | 18921 |
+| ulem | 53365 | 53365 |
+| unicode-data | 60516 | 60516 |
+| uniquecounter | 53162 | 53162 |
+| upquote | 26059 | 26059 |
+| url | 32528 | 32528 |
+| xcolor | 41044 | 60925 | Update
+| xfor | 15878 | 15878 |
+| xifthen | 38929 | 38929 |
+| xindex | 60248 | 62521 | Update
+| xindex.x86_64-linux | 49312 | 49312 |
+| xindy | 59894 | 59894 |
+| xindy.x86_64-linux | 58249 | 58249 |
+| xkeyval | 57006 | 57006 |
+| xpatch | 54563 | 54563 |
+| xstring | 60007 | 60007 |
+| xunicode | 30466 | 30466 |
+| zapfding | 31835 | 61719 | Update
+|===
