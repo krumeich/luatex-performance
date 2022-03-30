@@ -1,4 +1,4 @@
-\listfiles
+%\listfiles
 
 \documentclass[a4paper]{article}
 
@@ -11,12 +11,26 @@
 
 \newcommand{\marktime}{\directlua{table.insert(times, os.time())}}
 
-\newcommand{\lorem}{Curabitur dictum gravida mauris. Nam arcu libero, nonummy
+\newcommand{\lorema}{Curabitur dictum gravida mauris. Nam arcu libero, nonummy
   eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
   neque. Pellentesque habitant morbi tristique senectus et netus et malesuada
   fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla
   et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet
   tortor gravida placerat.}
+
+\newcommand{\loremb}{Donec luctus et dui ultricies vehicula. Fusce pharetra
+fringilla dui, at laoreet enim egestas convallis. Nullam vel imperdiet
+nisl. Aenean suscipit leo eu dui bibendum venenatis. Donec iaculis lorem ac arcu
+tempus gravida. Curabitur pharetra metus elit, eu lobortis ligula fringilla
+a. Nam luctus tortor ac consequat volutpat.}
+
+
+\newcommand{\teststepparbox}[3]{\vspace{1ex}\noindent%
+        \parbox[t]{1cm}{\centering #1}%
+        \parbox[t]{.43\linewidth}{#2}%
+        \hspace{0.5cm}%
+        \parbox[t]{.43\linewidth}{#3}\par%
+        }
 
 \begin{document}
 
@@ -24,8 +38,8 @@
 
   times = {}
   print(start)
-  for j = 0, 800 do
-     tex.print("\\input{testcase} ")
+  for j = 0, 700 do
+     tex.print("\\input{testcase-parbox} ")
   end
 
 \end{luacode*}
@@ -33,7 +47,7 @@
 
 \begin{luacode}
 
-  local theformat = "%4s %8s %8s"
+  local theformat = "Performance: %4s %8s %8s"
   local header = string.format(theformat, "Num", "Lap", "Total")
 
   print()
